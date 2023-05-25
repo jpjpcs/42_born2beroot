@@ -6,7 +6,7 @@ The goal of this project is to create a virtual machine running linux that meets
 
 We have a completed guide provided by gemartin: https://github.com/gemartin99/Born2beroot-Tutorial/tree/main
 
-This guide has some points that we should have extra attention: 
+This guide has some points that we should pay extra attention: 
 
 1 - If you're going to do it with bonus, please do what is asked in subpoint "7. One we established the recommended 12 GB we must click on Create. If we are doing the bonus we might set 30 GB." of point "2. Virtual machine installation: ", but put exactly 30.8 GB instead of 30GB.
 
