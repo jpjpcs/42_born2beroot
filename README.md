@@ -6,16 +6,27 @@ The goal of this project is to create a virtual machine running linux that meets
 
 We have a completed guide provided by gemartin : https://github.com/gemartin99/Born2beroot-Tutorial/tree/main
 This guide has some points that we should have extra attention: 
+
 1 - If you're going to do it with bonus, please do what is asked in subpoint "7. One we established the recommended 12 GB we must click on Create. If we are doing the bonus we might set 30 GB." of point "2. Virtual machine installation: ", but put exactly 30.8 GB instead of 30GB.
+
 2 - In the subpoint "15. Select Guied - use entire disk and set up encrypted LVM. If you want to do the bonus select Manual and then click here" of the point "3. Debian Installation", go directlly to "8.1. Manual partition".
+
 3 - In the subpoint "6. As the subject indicates, the size of the partition must be 500 megabytes.", put exactly 525.05 instead of 500mb. 
+
 4 - Follow the tutorial and do it until 8.12 (included). Then jump to 8.19 (and do it).
-5 - In the next points where you need to define the dimension of the partitions (similar to what I refered in point 3 above), you should convert Gibibyte to Gigabyte (using https://www.dataunitconverter.com/gibibyte-to-gigabyte/4) to include the right value on the field. For example, in subpoint "37. Size, as indicated in the subject, will be 10g." of point "8.1. Manual partition", 10 g (Gibibyte or GiB) is equivalent to 10.73741824 GB (Gigabyte). In subpoint 38, 39, 40, 41, 42, 43, we have to do the same, to guarantee that the partitions have the dimension that is asked in the bonus part: ![image](https://github.com/jpjpcs/42_born2beroot/assets/127231744/dd141d07-f8a4-4199-b77a-58a2d05e7b95)
+
+5 - In the next points where you need to define the dimension of the partitions (similar to what I refered in point 3 above), you should convert Gibibyte to Gigabyte (using https://www.dataunitconverter.com/gibibyte-to-gigabyte/4) to include the right value on the field. For example, in subpoint "37. Size, as indicated in the subject, will be 10g." of point "8.1. Manual partition", 10 g (Gibibyte or GiB) is equivalent to 10.73741824 GB (Gigabyte). In subpoint 38, 39, 40, 41, 42, 43, we have to do the same, to guarantee that the partitions have the dimension that is asked in the bonus part: ![image](https://github.com/jpjpcs/42_born2beroot/assets/127231744/dd141d07-f8a4-4199-b77a-58a2d05e7b95).
+
 5 -  After finishing the point "8.1. Manual partition", make the point "4.1 Installing sudo & configuration of users and groups" and point "4.2 Installing & configuring SSH" of the point "4. Virtual machine setup gear".
+
 6 - After doing the 4.2 point, make the point "4.6 Connecting via SSH". Why? Because you will have to put a lot of commands, and its easier to copy/paste it to the linux terminal of your pc (which is not allowed in the environment of the Debian Gnu/Linux -  the "terminal" of the VM).
+
 7 - In "4.6 Connecting via SSH", in the subpoint "2. Once there we will click on Network, click on Advanced so it shows more options, then we click on Port fowarding.", choose Bridge Adapter (Attached to:) and eno2 (Name:) in the Network. This will solve a lot of issues in the next points of the tutorial, once you don't have to configure any door anymore. It will be done automatically for you.
-8 . At point 8.2 Wordpress & services configuration, subpoint "Lighttpd", we don't have to do the subpoint 4 (why? because we have done the configuration explained in the point above - 7.). 
+
+8 . At point 8.2 Wordpress & services configuration, subpoint "Lighttpd", we don't have to do the subpoint 4 (why? because we have done the configuration explained in the point above - 7.).
+
 9. At point 8.2 Wordpress & services configuration, subpoint "WordPress configuration", subpoint "7. Once we have completed the previous steps we can go back to our browser and type localhost. You should see the following:", we should put our ip adress (command "ip a" in the terminal to check it) instead of localhost.
+
 10. In the point "8.3 - Aditional service", subpoint "LiteSpeed", subpoint "6. Once we have completed the previous step we can connect. We will put in the search engine of our browser localhost:7080 we provide our login credentials and we will have access to everything.", we should put our ip address followed by ":" (example: http://10.11.248.100:7080)...7080 is the door of the service.
 
 # Debian Version
