@@ -4,7 +4,8 @@ The goal of this project is to create a virtual machine running linux that meets
 
 # 42_born2beroot Complete Guide
 
-We have a completed guide provided by gemartin : https://github.com/gemartin99/Born2beroot-Tutorial/tree/main
+We have a completed guide provided by gemartin: https://github.com/gemartin99/Born2beroot-Tutorial/tree/main
+
 This guide has some points that we should have extra attention: 
 
 1 - If you're going to do it with bonus, please do what is asked in subpoint "7. One we established the recommended 12 GB we must click on Create. If we are doing the bonus we might set 30 GB." of point "2. Virtual machine installation: ", but put exactly 30.8 GB instead of 30GB.
@@ -37,8 +38,8 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 
 || Command                               | Description                                                              |
 |---------------------------------------|--------------------------------------------------------------------------|
-| `ss -tuln`                            | Lists all running TCP and UDP network connections on the system          |
-| `ls /usr/bin/*session`                 | Checks if there are no graphical interfaces in use                       |
+| `ss -tuln`                            | Lists all running TCP and UDP network connections on the system |
+| `ls /usr/bin/*session`                 | Checks if there are no graphical interfaces in use |
 | `sudo ufw status`                      | Checks the status of the UFW (firewall) service                           |
 | `sudo ufw status numbered`             | Lists the numbered rules of UFW                                           |
 | `sudo ufw allow 8080`                  | Allows traffic on port 8080 through UFW                                   |
@@ -101,7 +102,7 @@ I followed the instructions from the recommended system PDF. Debian its easier t
 
 Apt and aptitude are advanced package tools for installing and managing programs. 
 Aptitude is an enhanced version of apt. 
-# Aptitude and APT (Advanced Packaging Tool) Differences?
+## Aptitude and APT (Advanced Packaging Tool) Differences?
 First difference: Aptitude is a high-level package manager while APT is lower level which can be used by other higher level package managers. 
 Second difference: Apt only does exactly what is passed on the command line, while aptitude has better autonomous management. 
 Third difference: Aptitude is smarter and will automatically remove unused packages or suggest installation of dependent packages
