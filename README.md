@@ -36,44 +36,44 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 
 # Commands
 
-|| Command                               | Description                                                              |
+| Command                               | Description                                                              |
 |---------------------------------------|--------------------------------------------------------------------------|
-| `ss -tuln`                            | Lists all running TCP and UDP network connections on the system |
-| `ls /usr/bin/*session`                 | Checks if there are no graphical interfaces in use |
-| `sudo ufw status`                      | Checks the status of the UFW (firewall) service                           |
-| `sudo ufw status numbered`             | Lists the numbered rules of UFW                                           |
-| `sudo ufw allow 8080`                  | Allows traffic on port 8080 through UFW                                   |
-| `sudo ufw delete num_rule`             | Removes the rule specified by the number in UFW                           |
-| `sudo service ufw status`              | Checks the status of the UFW (firewall) service                           |
-| `sudo service ssh status`              | Checks the status of the SSH service                                      |
-| `uname -v`                             | Displays information about the operating system version                   |
-| `groups jode-jes`                      | Checks the groups to which a user belongs                                 |
-| `sudo adduser name_user`               | Creates a new user on the system                                          |
-| `sudo addgroup evaluating`             | Creates a new group in the system                                         |
-| `sudo groupdel group_name`             | Removes a group from the system                                           |
-| `sudo adduser name_user evaluating`    | Adds a user to a specific group                                           |
-| `sudo adduser name_user sudo`          | Adds a user to the "sudo" group (superuser privileges)                    |
-| `hostname`                             | Displays or sets the host name (computer name)                            |
-| `sudo nano /etc/hostname`              | Edits the host name configuration file                                    |
-| `sudo nano /etc/hosts`                 | Edits the name resolution system (DNS) configuration file                |
-| `hostnamectl set-hostname <new name>`  | Changes the hostname                                                      |
-| `which sudo`                           | Displays the full path to the "sudo" command executable                   |
-| `dpkg -s sudo`                         | Checks the installation status of the "sudo" package                      |
-| `dpkg -s ufw`                          | Checks the installation status of the "ufw" package                       |
-| `nano /etc/sudoers.d/sudo_config`      | Edits the sudo configuration settings                                     |
-| `sudo visudo`                          | Edits the sudoers file with safety measures                               |
-| `sudo nano /etc/pam.d/common-password` | Edits the common password settings of PAM (Pluggable Authentication Module)|
-| `sudo nano /etc/login.defs`            | Edits the password settings                                               |
-| `ssh newuser@localhost -p 4242`        | Connects to "localhost" as "newuser" using port 4242 via SSH              |
-| `crontab -e`                           | Opens the editor to edit cron tasks                                       |
-| `sudo systemctl enable cron`           | Enables the cron service to start at boot                                 |
-| `sudo systemctl disable cron`          | Disables the cron service                                                 |
-| `chage -l <username>`                   | Displays information about the user                                       |
+| ss -tuln                              | Lists all running TCP and UDP network connections                         |
+| ls /usr/bin/*session                   | Checks if there are no active graphical interfaces in use                 |
+| sudo ufw status                       | Checks the status of the UFW (firewall) service                           |
+| sudo ufw status numbered              | Lists the numbered rules of UFW                                           |
+| sudo ufw allow 8080                   | Allows traffic on port 8080 through UFW                                   |
+| sudo ufw delete num_rule              | Removes the specified rule by number in UFW                               |
+| sudo service ufw status               | Checks the status of the UFW (firewall) service                           |
+| sudo service ssh status               | Checks the status of the SSH service                                      |
+| uname -v                              | Displays information about the operating system version                   |
+| groups luide-so                       | Checks the groups to which a user belongs                                 |
+| sudo adduser name_user                | Creates a new user in the system                                           |
+| sudo addgroup evaluating              | Creates a new group in the system                                         |
+| sudo groupdel group_name              | Removes a group from the system                                            |
+| sudo adduser name_user evaluating     | Adds a user to a specific group                                            |
+| sudo adduser name_user sudo           | Adds a user to the "sudo" group (superuser privileges)                     |
+| hostname                              | Displays or sets the hostname (computer name)                             |
+| sudo nano /etc/hostname               | Edits the hostname configuration file                                     |
+| sudo nano /etc/hosts                  | Edits the system's name resolution configuration file (DNS)               |
+| hostnamectl set-hostname <new_name>    | Changes the hostname                                                       |
+| which sudo                            | Displays the full path to the "sudo" command executable                   |
+| dpkg -s sudo                          | Checks the installation status of the "sudo" package                      |
+| dpkg -s ufw                           | Checks the installation status of the "ufw" package                       |
+| nano /etc/sudoers.d/sudo_config       | Edits the sudo configuration settings                                      |
+| sudo visudo                           | Edits the sudoers file with safety                                        |
+| sudo nano /etc/pam.d/common-password  | Edits the common password configuration settings in PAM                   |
+| sudo nano /etc/login.defs             | Edits the password configuration settings                                  |
+| ssh newuser@localhost -p 4242         | Connects to "localhost" as "newuser" using SSH on port 4242               |
+| crontab -e                            | Opens the editor to edit cron tasks                                       |
+| sudo systemctl enable cron            | Enables the cron service to start at boot                                  |
+| sudo systemctl disable cron           | Disables the cron service                                                  |
+| chage -l <username>                   | Displays information about the user                                        |
 
-### Compare the signature
+ 
+ ### Compare the signature
 - Create the signature: `shasum born2beroot.vdi`
 - Place the signature in test.txt: `diff signature.txt test.txt`
-
 
 
 # Questions
