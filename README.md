@@ -34,7 +34,7 @@ This guide has some points that we should have extra attention:
 
 In my project I used Debian 10.13. If you want to use the same version, follow the download link: https://cdimage.debian.org/cdimage/archive/10.13.0/amd64/iso-cd/debian-10.13.0-amd64-netinst.iso
 
-# Commands
+# Commands for Evaluation
 
 | Command                               | Description                                                              |
 |---------------------------------------|--------------------------------------------------------------------------|
