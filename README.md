@@ -45,10 +45,11 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `sudo service ufw status`             | Checks the status of the UFW (firewall) service                           |
 | 3.  | Check that the SSH service is in use
 |     | `sudo service ssh status`             | Checks the status of the SSH service                                      |
-|     | `uname -v`                            | Displays information about the operating system version                   |
+|     | `dpkg -l | grep ssh`                 | Shows that ssh is installed                                                |
 | 4.  | Check that you are using the Debian 
-|     | `groups username`                     | Checks the groups to which a user belongs                                 |
+|     | `uname -v` or `head -n 2 /etc/os-release`      | Displays information about the operating system version          |
 | 5.  | Check that your user is within the "sudo" and "user42" groups.
+|     | `groups username`                     | Checks the groups to which a user belongs                                 |
 |     | `getent group sudo`                   | Checks that the user is within the "sudo" group                           |
 |     | `getent group user42`                 | Checks that the user is within the "user42" group                         |
 | 6.  | Create a new user and show that it follows the password policy we have created.
@@ -56,9 +57,9 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | 7.  | We create a new group named "evaluating".
 |     | `sudo addgroup evaluating`            | Creates a new group in the system named "evaluating"                      |
 | 8.  | We add the new user to the new group.
-|     | `sudo groupdel group_name`            | Removes a group from the system                                           |
 |     | `sudo adduser name_user evaluating`   | Adds a user to a specific group (in this case is the evaluating group)    |
 |     | `getent group evaluating`             | Checks that the user is within "evaluating" group                         |
+|     | `sudo groupdel group_name`            | Removes a group from the system                                           |
 | 9.  | Check that the machine's hostname is correct login42.
 |     | `hostname`                            | Displays or sets the hostname (computer name)                             |
 | 10. | Modify hostname to replace your login with the evaluator's. In this case, we will replace it with student42.
@@ -88,8 +89,9 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | 16. | Check that the UFW program is installed on the virtual machine and check that it works correctly.
 |     | `dpkg -s ufw`                           | Checks the installation status of the "ufw" package                       |
 |     | `sudo service ufw status`               | Checks the status of the UFW (firewall) service                           |
+|     | `dpkg -l | grep ufw`                    | Shows that ufw is installed                                              |
 | 17. | List the active rules in UFW, if the bonus part is not done, the rule for port 4242 should only appear.
-|     | `sudo ufw status numbered`              | Lists the numbered rules of UFW                                           |
+|     | `sudo ufw status numbered` or `sudo ufw status`             | Lists the numbered rules of UFW                       |
 | 18. | Create a new rule for port 8080. Verify that it has been added to the active rules and then you can delete it.
 |     | `sudo ufw allow port-id (expl: 8080)`   | Allows traffic on port 8080 through UFW. Creates the rule.                |
 |     | `sudo ufw status numbered` 	            | Lists the numbered rules of UFW                                           |
@@ -110,7 +112,16 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | 23. | Check all TCP and UDP.
 |     | `ss -tuln` or `ss -tunlp`                             | Lists all running TCP and UDP network connections                        |
 
- 
+ ### Other commands:
+ - su | change to root/admin super user
+ - su - | go to root directory
+ - ip a | check ip
+ - sudo | means super user do. It gives permissions of other users to an user (for expl permissions of admin to another user)
+ - sudo systemctl poweroff | machine shutdown or sudo poweroff or sudo shutdown after installed sudo
+ - sudo systemctl status cron | verifies the status of cron
+ - sudo systemctl status ssh | verifies the status of ssh
+ - sudo systemctl status ufw | verifies the status of the firewall
+
 
  ### Compare the signature:
 - Create the signature: `shasum born2beroot.vdi`
