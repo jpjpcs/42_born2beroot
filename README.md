@@ -175,9 +175,9 @@ Cron allows for scheduling of programs or scripts to run at a specific time.
 
 Cron or cron job is a command line utility to schedule commands or scripts to happen at specific intervals or a specific time each day. Useful if you want to set your server to restart at a specific time each day.
 
-    cd /usr/local/bin – to show monitoring.sh
+    cd /home/jode-jes && ls – to show monitoring.sh
     sudo crontab -u root -e – to edit the cron job
-    change script to */1 * * * * sleep 30s && script path – to run it every 30 seconds, delete the line to stop the job from running.
+    change script from */10 * * * * sh /root/monitoring.sh to */1 * * * * sh /root/monitoring.sh - it will run after 1 minute instead of 10m.
 
 
 
