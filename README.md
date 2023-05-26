@@ -47,7 +47,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `sudo service ssh status`             | Checks the status of the SSH service                                      |
 |     | `dpkg -l | grep ssh`                 | Shows that ssh is installed                                                |
 | 4.  | Check that you are using the Debian 
-|     | `uname -v` or `head -n 2 /etc/os-release`      | Displays information about the operating system version          |
+|     | `uname -v` or `head -n 2 /etc/os-release` or `lsb_release -a || cat /etc/os-release`  | Displays information about the operating system version          |
 | 5.  | Check that your user is within the "sudo" and "user42" groups.
 |     | `groups username`                     | Checks the groups to which a user belongs                                 |
 |     | `getent group sudo`                   | Checks that the user is within the "sudo" group                           |
