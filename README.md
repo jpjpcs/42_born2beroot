@@ -73,7 +73,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | 12. | Check that sudo is installed.
 |     | `which sudo`                          | Displays the full path to the "sudo" command executable-sudo is installed |
 |     | `dpkg -s sudo`                        | Checks the installation status of the "sudo" package                      |
-|     | `dpkg -l | grep sudo`                 | Shows that sudo is installed                                              |
+|     | ` dpkg -l | grep sudo `                 | Shows that sudo is installed                                              |
 | 13. | Add the new user to the sudo group.
 |     | `sudo adduser name_user sudo`         | Adds a user to the "sudo" group (superuser privileges)                    |
 |     | `getent group sudo`                   | Checks that the user is within "sudo" group                               |
