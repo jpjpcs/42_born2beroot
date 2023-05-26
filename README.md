@@ -36,65 +36,83 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 
 # Commands for Evaluation
 
-| Command                               | Description                                                              |
-|---------------------------------------|--------------------------------------------------------------------------|
-1.  Verify that no graphical interface is in use.
-| ls /usr/bin/*session                   | Checks if there are no active graphical interfaces in use                |
-2. Check that the UFW service is in use.
-| sudo ufw status                       | Checks the status of the UFW (firewall) service                           |
-| sudo service ufw status               | Checks the status of the UFW (firewall) service                           |
-3. Check that the SSH service is in use
-| sudo service ssh status               | Checks the status of the SSH service                                      |
-| uname -v                              | Displays information about the operating system version                   |
-4. Check that you are using the Debian 
-| groups username                       | Checks the groups to which a user belongs                                 |
-5. Check that your user is within the "sudo" and "user42" groups.
-| getent group sudo                     | Checks that the user is within "sudo" group                               |
-| getent group user42                   | Checks that the user is within "user42" group                             |
-6. Create a new user and show that it follows the password policy we have created.
-| sudo adduser name_user                | Creates a new user in the system                                          |
-| sudo addgroup evaluating              | Creates a new group in the system named "evaluating"                      |
-| sudo groupdel group_name              | Removes a group from the system                                           |
-| sudo adduser name_user evaluating     | Adds a user to a specific group (in this case is the evaluating group)    |
-| getent group evaluating               | Checks that the user is within "evaluating" group                         |
-| sudo adduser name_user sudo           | Adds a user to the "sudo" group (superuser privileges)                    |
-| hostname                              | Displays or sets the hostname (computer name)                             |
-| sudo nano /etc/hostname               | Edits the hostname configuration file                                     |
-| sudo nano /etc/hosts                  | Edits the system's name resolution configuration file (DNS)               |
-| hostnamectl set-hostname <new_name>   | Changes the hostname                                                      |
-| sudo reboot                           | Reboot the machine                                                        |
-| lsblk                                 | Check all partitions                                                      |
-| which sudo                            | Displays the full path to the "sudo" command executable-sudo is installed |
-| dpkg -s sudo                          | Checks the installation status of the "sudo" package                      |
-| dpkg -l | grep sudo                   | Shows that sudo is installed                                              |
-| sudo adduser name_user sudo           | Adds a user to the "sudo" group (superuser privileges)                    |
-| getent group sudo                     | Checks that the user is within "sudo" group                               |
-| nano /etc/sudoers.d/sudo_config       | Edits the sudo configuration settings/rules                               |
-| sudo visudo                           | Edits the sudoers file with safety                                        |
-| cd /var/log/sudo && ls (at root@hostname:~# on the terminal) | Show that the path /var/log/sudo/ exists and contains at least one file |
-| cat sudo_config (at sudo file)        | Show the logs                                                             |
-| sudo nano /etc/pam.d/common-password  | Edits the common password configuration settings in PAM                   |
-| sudo nano /etc/login.defs             | Edits the password configuration settings                                 |
-| sudo chage --maxdays 30 --mindays 2 --warndays 7 username | change the pass definitions in the defs file          | 
-16.
-| dpkg -s ufw                           | Checks the installation status of the "ufw" package                       |
-| sudo service ufw status               | Checks the status of the UFW (firewall) service                           |
-| sudo ufw status numbered              | Lists the numbered rules of UFW                                           |
+| No. | Command                               | Description                                                              |
+|-----|---------------------------------------|--------------------------------------------------------------------------|
+| 1.  | Verify that no graphical interface is in use.
+|     | `ls /usr/bin/*session`                 | Checks if there are no active graphical interfaces in use                |
+| 2.  | Check that the UFW service is in use.
+|     | `sudo ufw status`                     | Checks the status of the UFW (firewall) service                           |
+|     | `sudo service ufw status`             | Checks the status of the UFW (firewall) service                           |
+| 3.  | Check that the SSH service is in use
+|     | `sudo service ssh status`             | Checks the status of the SSH service                                      |
+|     | `uname -v`                            | Displays information about the operating system version                   |
+| 4.  | Check that you are using the Debian 
+|     | `groups username`                     | Checks the groups to which a user belongs                                 |
+| 5.  | Check that your user is within the "sudo" and "user42" groups.
+|     | `getent group sudo`                   | Checks that the user is within the "sudo" group                           |
+|     | `getent group user42`                 | Checks that the user is within the "user42" group                         |
+| 6.  | Create a new user and show that it follows the password policy we have created.
+|     | `sudo adduser name_user`              | Creates a new user in the system                                          |
+| 7.  | We create a new group named "evaluating".
+|     | `sudo addgroup evaluating`            | Creates a new group in the system named "evaluating"                      |
+| 8.  | We add the new user to the new group.
+|     | `sudo groupdel group_name`            | Removes a group from the system                                           |
+|     | `sudo adduser name_user evaluating`   | Adds a user to a specific group (in this case is the evaluating group)    |
+|     | `getent group evaluating`             | Checks that the user is within "evaluating" group                         |
+| 9.  | Check that the machine's hostname is correct login42.
+|     | `hostname`                            | Displays or sets the hostname (computer name)                             |
+| 10. | Modify hostname to replace your login with the evaluator's. In this case, we will replace it with student42.
+|     | `sudo nano /etc/hostname`             | Edits the hostname configuration file                                     |
+|     | `sudo nano /etc/hosts`                | Edits the system's name resolution configuration file (DNS)               |
+|     | `hostnamectl`                         | Gives info about the hostname                                             |
+|     | `hostnamectl set-hostname <new_name>` | Changes the hostname                                                      |
+|     | `sudo reboot`                         | Reboot the machine                                                        |
+| 11. | Check that all partitions are as indicated in the subject.
+|     | `lsblk`                               | Check all partitions                                                      |
+| 12. | Check that sudo is installed.
+|     | `which sudo`                          | Displays the full path to the "sudo" command executable-sudo is installed |
+|     | `dpkg -s sudo`                        | Checks the installation status of the "sudo" package                      |
+|     | `dpkg -l | grep sudo`                 | Shows that sudo is installed                                              |
+| 13. | Add the new user to the sudo group.
+|     | `sudo adduser name_user sudo`         | Adds a user to the "sudo" group (superuser privileges)                    |
+|     | `getent group sudo`                   | Checks that the user is within "sudo" group                               |
+| 14. | Show the application of the rules imposed for sudo by the subject.
+|     | `nano /etc/sudoers.d/sudo_config`     | Edits the sudo configuration settings/rules                               |
+|     | `sudo visudo`                         | Edits the sudoers file with safety                                        |
+| 15. | Show that the path /var/log/sudo/ exists and contains at least one file, in this we should see a history of the commands used with sudo.
+|     | `cd /var/log/sudo && ls`              | Show that the path /var/log/sudo/ exists and contains at least one file   |
+|     | `cat sudo_config`                     | Show the logs                                                             |
+|     | `sudo nano /etc/pam.d/common-password`| Edits the common password configuration settings in PAM                   |
+|     | `sudo nano /etc/login.defs`            | Edits the password configuration settings                                 |
+|     | `sudo chage --maxdays 30 --mindays 2 --warndays 7 username` | change the pass definitions in the defs file |
+| 16. | Check that the UFW program is installed on the virtual machine and check that it works correctly.
+|     | `dpkg -s ufw`                           | Checks the installation status of the "ufw" package                       |
+|     | `sudo service ufw status`               | Checks the status of the UFW (firewall) service                           |
+| 17. | List the active rules in UFW, if the bonus part is not done, the rule for port 4242 should only appear.
+|     | `sudo ufw status numbered`              | Lists the numbered rules of UFW                                           |
+| 18. | Create a new rule for port 8080. Verify that it has been added to the active rules and then you can delete it.
+|     | `sudo ufw allow port-id (expl: 8080)`   | Allows traffic on port 8080 through UFW. Creates the rule.                |
+|     | `sudo ufw status numbered` 	            | Lists the numbered rules of UFW                                           |
+|     | `sudo ufw delete num_rule`              | Removes the specified rule by number in UFW                               |
+| 19. | Check that the ssh service is installed on the virtual machine, that it works correctly, and that it only works on port 4242.
+|     | `which ssh`                            | Displays the full path to the "ssh" command executable-proves ssh is installed |
+|     | `sudo service ssh status` 	            | Checks the status of the SSH service                                       |
+| 20. | Use ssh to log in with the newly created user. Make sure that you cannot use ssh with the root user.
+|     | `ssh newuser@ip_address -p 4242`        | Connects to "localhost" as "newuser" using SSH on port 4242               |
+| 21. | Modify the runtime of the script from 10 minutes to 1.
+|     | `crontab -e`                            | Opens the editor to edit cron tasks                                       |
+| 22. | Translate English: Finally, make the script stop running when the server has started, but without modifying the script.
+|     | `sudo /etc/init.d/cron stop`            | Make the script stops.                                                    |
+|     | `sudo /etc/init.d/cron start`            | Make the script starts.                                                    |
+|     | `sudo systemctl enable cron`            | Enables the cron service to start at boot                                 |
+|     | `sudo systemctl disable cron`           | Disables the cron service                                                 |
+|     | `chage -l <username>`                   | Displays information about the user                                       |
+| 23. | Check all TCP and UDP.
+|     | `ss -tuln` or `ss -tunlp`                             | Lists all running TCP and UDP network connections                        |
 
-| sudo ufw status numbered              | Lists the numbered rules of UFW                                           |
-| sudo ufw allow port-id (expl: 8080)   | Allows traffic on port 8080 through UFW. Creates the rule.                                   |
-| sudo ufw delete num_rule              | Removes the specified rule by number in UFW                               |
-
-| ssh newuser@localhost -p 4242         | Connects to "localhost" as "newuser" using SSH on port 4242               |
-| crontab -e                            | Opens the editor to edit cron tasks                                       |
-| sudo systemctl enable cron            | Enables the cron service to start at boot                                 |
-| sudo systemctl disable cron           | Disables the cron service                                                 |
-| chage -l <username>                   | Displays information about the user                                       |
  
- | ss -tuln                              | Lists all running TCP and UDP network connections                        |
 
- 
- ### Compare the signature
+ ### Compare the signature:
 - Create the signature: `shasum born2beroot.vdi`
 - Place the signature in test.txt: `diff signature.txt test.txt`
 
