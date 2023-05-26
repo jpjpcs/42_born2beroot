@@ -115,7 +115,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
  ### Compare the signature:
 - Create the signature: `shasum born2beroot.vdi`
 - Place the signature in test.txt: `diff signature.txt test.txt`
-
+** vdi remains for virtualbox disk image.
 
 # Questions
 ## What is a VM, why its used, and why is it important?
@@ -154,7 +154,7 @@ Fourth difference: Another big difference is the functionality offered by both t
 AppArmor manages permissions and restrictions, protecting the system by creating security profiles for each program, restricting access to unused system resources.  
 Its a Linux security module in the Linux Kernel system that provides Mandatory Access Control (MAC) security, allowing the system administrator to restrict the capabilities of a program. Basically it allows the system admin to restrict the actions that processes can perform. It is included by default with Debian. To check if its running we must write the command: aa-status.
 
-## What is LVM?
+## What is LVM (Logic Volume Manager)?
 
 LVM dynamically manages partitions by creating a group for partitions, allocating space dynamically on mass storage devices, and avoiding the need for physical disk formatting when reallocating space. Basically it allows us to easily manipulate the partitions or logical volume on a storage device, being more flexible than conventional partitioning schemes for storing volumes.
 
@@ -163,7 +163,7 @@ LVM dynamically manages partitions by creating a group for partitions, allocatin
 UFW allows for simple configuration of the firewall.
 UFW is a interface to modify the firewall of the device without compromising security. You use it to configure which ports to allow connections to and which ports to close. This is useful in conjunction with SSH, can set a specific port for it to work with.
 
-## What is SSH?
+## What is SSH (Secure Shell)?
 
 SSH is a communication encryption technique between host and client. The communication is protected on both ends.
 SSH or Secure Shell is an authentication mechanism between a client and a host. It uses encryption techniques so that all communication between clients and hosts is done in encrypted form. User on Mac or Linux can use SSH the terminal to work on their server via SSH.
