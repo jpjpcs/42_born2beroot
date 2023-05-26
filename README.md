@@ -38,8 +38,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 
 | Command                               | Description                                                              |
 |---------------------------------------|--------------------------------------------------------------------------|
-1.  Verify that no graphical interface is in use.![image](https://github.com/jpjpcs/42_born2beroot/assets/127231744/eca55208-18f9-40c8-a6c9-1b31dc2acb76)
-
+1.  Verify that no graphical interface is in use.
 | ls /usr/bin/*session                   | Checks if there are no active graphical interfaces in use                |
 2. Check that the UFW service is in use.
 | sudo ufw status                       | Checks the status of the UFW (firewall) service                           |
