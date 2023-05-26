@@ -34,7 +34,7 @@ This guide has some points that we should pay extra attention:
 
 In my project I used Debian 10.13. If you want to use the same version, follow the download link: https://cdimage.debian.org/cdimage/archive/10.13.0/amd64/iso-cd/debian-10.13.0-amd64-netinst.iso
 
-# Commands for Evaluation
+# Commands for Evaluationsudo
 
 | No. | Command                               | Description                                                              |
 |-----|---------------------------------------|--------------------------------------------------------------------------|
@@ -114,14 +114,14 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `ss -tuln` or `ss -tunlp`                             | Lists all running TCP and UDP network connections                        |
 
  ### Other commands:
- - su | change to root/admin super user
- - su - | go to root directory
- - ip a | check ip
+ - `su` | change to root/admin super user
+ - `su -` | go to root directory
+ - `ip a` | check ip
  - sudo | means super user do. It gives permissions of other users to an user (for expl permissions of admin to another user)
- - sudo systemctl poweroff | machine shutdown or sudo poweroff or sudo shutdown after installed sudo
- - sudo systemctl status cron | verifies the status of cron
- - sudo systemctl status ssh | verifies the status of ssh
- - sudo systemctl status ufw | verifies the status of the firewall
+ - `sudo systemctl poweroff` | machine shutdown or `sudo poweroff` or `sudo shutdown now` after installed sudo
+ - `sudo systemctl status cron` | verifies the status of cron
+ - `sudo systemctl status ssh` | verifies the status of ssh
+ - `sudo systemctl status ufw` | verifies the status of the firewall
 
 
  ### Compare the signature:
