@@ -30,6 +30,30 @@ which sudo
 
 10. In the point "8.3 - Aditional service", subpoint "LiteSpeed", subpoint "6. Once we have completed the previous step we can connect. We will put in the search engine of our browser localhost:7080 we provide our login credentials and we will have access to everything.", we should put our ip address followed by ":" (example: http://10.11.248.100:7080)...7080 is the door of the service.
 
+11. After finalizing the 8.3 point, we need to close the 68 door. To do that, we must:
+use the sudo ss -tunlp command to find that the port 68 is open, which is referring to DHCP. To close this door, we need to change the machine IP address from dynamic to static. To solve this, we will make the following changes:
+
+`sudo ss -tunlp` #check the open doors
+`ip a` #your current address
+in the file sudo nano /etc/network/interfaces change line allow-hotplug enp0s3 to auto enp0s3
+change line iface enp0s3 inet dhcp to
+iface enp0s3 inet static
+Then add the follow lines:
+address your_current_ip
+netmask 255.255.0.0
+gateway 10.11.254.254
+dns-nameservers 10.11.254.254
+`sudo systemctl restart networking`
+`sudo systemctl status networking`
+`sudo reboot`
+`ss -tulnp`#check if the door 68 is already closed. If it is, it doesn't appear.
+
+12. After this, go to the 7. point ("7. Signature") to deliver the project. 
+13. After that we will turn off the VM, take a snapshot to keep the instance and generate a signature.txt get with the shasum of vdi.
+`sudo shutdown now`#turn-off the machine
+`sha1sum born2beroot.vdi`#sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image.
+`cat > signature.txt`#put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project.
+
 # Debian Version
 
 In my project I used Debian 10.13. If you want to use the same version, follow the download link: https://cdimage.debian.org/cdimage/archive/10.13.0/amd64/iso-cd/debian-10.13.0-amd64-netinst.iso
