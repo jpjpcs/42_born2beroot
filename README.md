@@ -97,7 +97,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `groups username`                     | Checks the groups to which a user belongs                                 |
 |     | `getent group sudo`                   | Checks that the user is within the "sudo" group                           |
 |     | `getent group user42`                 | Checks that the user is within the "user42" group                         |
-|     | `cat/etc/group`                       | Let us see all the groups and the users inside them                       |
+|     | `cat /etc/group`                       | Let us see all the groups and the users inside them (in root path or user path)|
 | 6.  | Create a new user and show that it follows the password policy we have created.
 |     | `sudo adduser name_user`              | Creates a new user in the system                                          |
 | 7.  | We create a new group named "evaluating".
