@@ -19,7 +19,7 @@ This guide has some points that we should pay extra attention:
 5 - In the next points where you need to define the dimension of the partitions (similar to what I refered in point 3 above), you should convert Gibibyte to Gigabyte (using https://www.dataunitconverter.com/gibibyte-to-gigabyte/4) to include the right value on the field. For example, in subpoint "37. Size, as indicated in the subject, will be 10g." of point "8.1. Manual partition", 10 g (Gibibyte or GiB) is equivalent to 10.73741824 GB (Gigabyte). In subpoint 38, 39, 40, 41, 42, 43, we have to do the same, to guarantee that the partitions have the dimension that is asked in the bonus part: ![image](https://github.com/jpjpcs/42_born2beroot/assets/127231744/dd141d07-f8a4-4199-b77a-58a2d05e7b95).
 
 5 -  After finishing the point "8.1. Manual partition", make the point "4.1 Installing sudo & configuration of users and groups" and point "4.2 Installing & configuring SSH" of the point "4. Virtual machine setup gear".
-
+which sudo
 6 - After doing the 4.2 point, make the point "4.6 Connecting via SSH". Why? Because you will have to put a lot of commands, and its easier to copy/paste it to the linux terminal of your pc (which is not allowed in the environment of the Debian Gnu/Linux -  the "terminal" of the VM).
 
 7 - In "4.6 Connecting via SSH", in the subpoint "2. Once there we will click on Network, click on Advanced so it shows more options, then we click on Port fowarding.", choose Bridge Adapter (Attached to:) and eno2 (Name:) in the Network. This will solve a lot of issues in the next points of the tutorial, once you don't have to configure any door anymore. It will be done automatically for you.
@@ -53,6 +53,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `groups username`                     | Checks the groups to which a user belongs                                 |
 |     | `getent group sudo`                   | Checks that the user is within the "sudo" group                           |
 |     | `getent group user42`                 | Checks that the user is within the "user42" group                         |
+|     | `cat/etc/group`                       | Let us see all the groups and the users inside them                       |
 | 6.  | Create a new user and show that it follows the password policy we have created.
 |     | `sudo adduser name_user`              | Creates a new user in the system                                          |
 | 7.  | We create a new group named "evaluating".
@@ -75,12 +76,13 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `which sudo`                          | Displays the full path to the "sudo" command executable-sudo is installed |
 |     | `dpkg -s sudo`                        | Checks the installation status of the "sudo" package.                     |
 |     | `dpkg -l | grep sudo`                 | Shows sudo's installed.                                                   |
+|     | `sudo -V`                             | Verify that sudo's installed and shows its version                        |
 | 13. | Add the new user to the sudo group.
-|     | `sudo adduser name_user sudo`         | Adds a user to the "sudo" group (superuser privileges)                    |
+|     | `sudo adduser name_user`              | Adds a user to the "sudo" group (superuser privileges)                    |
 |     | `getent group sudo`                   | Checks that the user is within "sudo" group                               |
 | 14. | Show the application of the rules imposed for sudo by the subject.
 |     | `nano /etc/sudoers.d/sudo_config`     | Edits the sudo configuration settings/rules                               |
-|     | `sudo visudo`                         | Edits the sudoers file with safety                                        |
+|     | `sudo visudo`which sudo               | Edits the sudoers file with safety                                        |
 | 15. | Show that the path /var/log/sudo/ exists and contains at least one file, in this we should see a history of the commands used with sudo.
 |     | `cd /var/log/sudo && ls`              | Show that the path /var/log/sudo/ exists and contains at least one file   |
 |     | `cat sudo_config`                     | Show the logs                                                             |
