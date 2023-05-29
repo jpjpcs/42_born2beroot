@@ -58,7 +58,7 @@ Before submitting the project, we performed some checks to ensure everything was
 `dpkg -l | grep sudo`#checks if the Sudo is installed and its version.
 `hostnamectl`#gives info about the hostname
 `sudo chage -l username`checks the pass requirements
-`sudo ufw status numbered`
+`sudo ufw status numbered`If anything different appears, a graphical interface is being used.
 `sudo systemctl status ssh`
 `cd /var/log/sudo/ && cat sudo_config`
 `getent group sudo`
@@ -83,7 +83,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | No. | Command                               | Description                                                              |
 |-----|---------------------------------------|--------------------------------------------------------------------------|
 | 1.  | Verify that no graphical interface is in use.
-|     | `ls /usr/bin/*session`                 | Checks if there are no active graphical interfaces in use                |
+|     | `ls /usr/bin/*session`                 | Checks if there are no active graphical interfaces in use (/usr/bin/dbus-run-session) must appear.If anything different appears, a graphical interface is being used.                |
 | 2.  | Check that the UFW service is in use.
 |     | `sudo ufw status`                     | Checks the status of the UFW (firewall) service                           |
 |     | `sudo service ufw status`             | Checks the status of the UFW (firewall) service                           |
