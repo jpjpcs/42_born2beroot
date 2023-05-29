@@ -50,7 +50,7 @@ dns-nameservers 10.11.254.254
 
 12. After this, make a fast "Last Checks" (bellow) and then go to the 7. point of Gemartin tutorial ("7. Signature") to deliver the project.
 
-####### Last Checks
+###### Last Checks
 Before submitting the project, we performed some checks to ensure everything was set up correctly. These checks included verifying the Linux release, checking the partitions, verifying sudo installation, checking the hostname, checking password policies, checking UFW and SSH status, checking sudo logs, and verifying user group memberships:
 
 lsb_release -a || cat /etc/os-release
