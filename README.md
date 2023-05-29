@@ -124,6 +124,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
  - `sudo systemctl status cron` | verifies the status of cron
  - `sudo systemctl status ssh` | verifies the status of ssh
  - `sudo systemctl status ufw` | verifies the status of the firewall
+ - `ctrl o && ctrl x` | in nano, crtl + o (saves the file) and ctrl + x (exits the file)
 
 
  ### Compare the signature:
