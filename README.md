@@ -186,7 +186,7 @@ We configured the password policy to meet the project's security requirements. W
 
 
  ### Compare the signature:
-- Create the signature: `shasum born2beroot.vdi`
+- Create the signature: `shasum Born2beroot.vdi`
 - Place the signature in test.txt: `diff signature.txt test.txt`
 ** vdi remains for virtualbox disk image.
 
