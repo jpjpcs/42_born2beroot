@@ -69,9 +69,9 @@ Before submitting the project, we performed some checks to ensure everything was
 
 ###### Turn-off the machine:
 `sudo shutdown now`
-###### Sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image:
-`sha1sum born2beroot.vdi`
-###### Put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project:
+###### Sha1shum guarantees that the file born2beroot.vdi was not changed.  It is a command that allows you to identify the integrity of a file using the SHA-1 hash check sum of a file. vdi stands for virtual disk image:
+`shasum Born2beroot.vdi`
+###### Put the number that is given in the shal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project:
 `cat > signature.txt`
 
 # Debian Version
