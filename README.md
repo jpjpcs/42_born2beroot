@@ -157,7 +157,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `sudo systemctl disable cron`           | Disables the cron service                                                 |
 |     | `sudo chage -l <username>`              | Displays information about the user pass requirements                     |
 | 23. | Check all TCP and UDP.
-|     | `ss -tuln` or `ss -tunlp`                             | Lists all running TCP and UDP network connections                        |
+|     | `ss -tuln` or `ss -tunlp`               | Lists all running TCP and UDP network connections                         |
 
  ### Other commands:
  - `su` | change to root/admin super user
