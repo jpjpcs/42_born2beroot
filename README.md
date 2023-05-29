@@ -66,9 +66,13 @@ getent group user42
 cd /home/jode-jes && bash monitoring.sh (the home/jode-jes is the path where I had put the file monitoring.sh. You can use the path that you wish. For example, if you use /usr/local/bin as the path, then the command should be cd /usr/local/bin && bash monitoring.sh).
 
 13. Signature: After that we will turn off the VM, take a snapshot to keep the instance and generate a signature.txt get with the shasum of vdi.
-`sudo shutdown now`#turn-off the machine
-`sha1sum born2beroot.vdi`#sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image.
-`cat > signature.txt`#put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project.
+
+######Turn-off the machine:
+`sudo shutdown now`
+######Sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image:
+`sha1sum born2beroot.vdi`
+######Put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project:
+`cat > signature.txt`
 
 # Debian Version
 
