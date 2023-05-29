@@ -75,14 +75,14 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | 12. | Check that sudo is installed.
 |     | `which sudo`                          | Displays the full path to the "sudo" command executable-sudo is installed |
 |     | `dpkg -s sudo`                        | Checks the installation status of the "sudo" package.                     |
-|     | `dpkg -l | grep sudo`                 | Shows sudo's installed.                                                   |
+|     | `dpkg -l (pipe) grep sudo`            | Shows sudo's installed.                                                   |
 |     | `sudo -V`                             | Verify that sudo's installed and shows its version                        |
 | 13. | Add the new user to the sudo group.
 |     | `sudo adduser name_user`              | Adds a user to the "sudo" group (superuser privileges)                    |
 |     | `getent group sudo`                   | Checks that the user is within "sudo" group                               |
 | 14. | Show the application of the rules imposed for sudo by the subject.
 |     | `nano /etc/sudoers.d/sudo_config`     | Edits the sudo configuration settings/rules                               |
-|     | `sudo visudo`which sudo               | Edits the sudoers file with safety                                        |
+|     | `sudo visudo`                         | Edits the sudoers file with safety                                        |
 | 15. | Show that the path /var/log/sudo/ exists and contains at least one file, in this we should see a history of the commands used with sudo.
 |     | `cd /var/log/sudo && ls`              | Show that the path /var/log/sudo/ exists and contains at least one file   |
 |     | `cat sudo_config`                     | Show the logs                                                             |
@@ -92,7 +92,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 | 16. | Check that the UFW program is installed on the virtual machine and check that it works correctly.
 |     | `dpkg -s ufw`                           | Checks the installation status of the "ufw" package                       |
 |     | `sudo service ufw status`               | Checks the status of the UFW (firewall) service                           |
-|     | `dpkg -l | grep ufw`                    | Shows that ufw is installed                                              |
+|     | `dpkg -l (pipe) grep ufw`                | Shows that ufw is installed                                              |
 | 17. | List the active rules in UFW, if the bonus part is not done, the rule for port 4242 should only appear.
 |     | `sudo ufw status numbered` or `sudo ufw status`             | Lists the numbered rules of UFW                       |
 | 18. | Create a new rule for port 8080. Verify that it has been added to the active rules and then you can delete it.
