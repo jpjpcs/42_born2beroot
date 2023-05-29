@@ -67,11 +67,11 @@ cd /home/jode-jes && bash monitoring.sh (the home/jode-jes is the path where I h
 
 13. Signature: After that we will turn off the VM, take a snapshot to keep the instance and generate a signature.txt get with the shasum of vdi.
 
-######Turn-off the machine:
+###### Turn-off the machine:
 `sudo shutdown now`
-######Sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image:
+###### Sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image:
 `sha1sum born2beroot.vdi`
-######Put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project:
+###### Put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project:
 `cat > signature.txt`
 
 # Debian Version
@@ -231,7 +231,7 @@ Video: https://www.youtube.com/watch?app=desktop&v=qWKK_PNHnnA&ab_channel=Tinker
 ## What is Cron?
 
 Cron allows for scheduling of programs or scripts to run at a specific time.
-
+cd /home/jode-jes && bash monitoring.sh
 Cron or cron job is a command line utility to schedule commands or scripts to happen at specific intervals or a specific time each day. Useful if you want to set your server to restart at a specific time each day.
 
     cd /home/jode-jes && ls – to show monitoring.sh
