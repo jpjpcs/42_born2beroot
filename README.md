@@ -53,11 +53,11 @@ dns-nameservers 10.11.254.254
 ###### Last Checks
 Before submitting the project, we performed some checks to ensure everything was set up correctly. These checks included verifying the Linux release, checking the partitions, verifying sudo installation, checking the hostname, checking password policies, checking UFW and SSH status, checking sudo logs, and verifying user group memberships:
 
-`lsb_release -a || cat /etc/os-release`
-`lsblk`
-`dpkg -l | grep sudo`
-`hostnamectl`
-`sudo chage -l username`
+`lsb_release -a || cat /etc/os-release` #checks info about the system, namelly the Debian version
+`lsblk`#checks the partitions
+`dpkg -l | grep sudo`#checks if the Sudo is installed and its version.
+`hostnamectl`#gives info about the hostname
+`sudo chage -l username`checks the pass requirements
 `sudo ufw status numbered`
 `sudo systemctl status ssh`
 `cd /var/log/sudo/ && cat sudo_config`
@@ -152,10 +152,10 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `crontab -e`                            | Opens the editor to edit cron tasks                                       |
 | 22. | Translate English: Finally, make the script stop running when the server has started, but without modifying the script.
 |     | `sudo /etc/init.d/cron stop`            | Make the script stops.                                                    |
-|     | `sudo /etc/init.d/cron start`            | Make the script starts.                                                    |
+|     | `sudo /etc/init.d/cron start`            | Make the script starts.                                                  |
 |     | `sudo systemctl enable cron`            | Enables the cron service to start at boot                                 |
 |     | `sudo systemctl disable cron`           | Disables the cron service                                                 |
-|     | `sudo chage -l <username>`                   | Displays information about the user                                       |
+|     | `sudo chage -l <username>`              | Displays information about the user pass requirements                     |
 | 23. | Check all TCP and UDP.
 |     | `ss -tuln` or `ss -tunlp`                             | Lists all running TCP and UDP network connections                        |
 
