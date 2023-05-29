@@ -6,20 +6,20 @@ The goal of this project is to create a virtual machine running linux that meets
 
 We have a completed guide provided by gemartin: https://github.com/gemartin99/Born2beroot-Tutorial/tree/main
 
-This guide has some points that we should pay extra attention: 
+This guide has some points that we should pay extra attention. You should read this points before go to the tutorial: 
 
-1 - If you're going to do it with bonus, please do what is asked in subpoint "7. One we established the recommended 12 GB we must click on Create. If we are doing the bonus we might set 30 GB." of point "2. Virtual machine installation: ", but put exactly 30.8 GB instead of 30GB.
+1 - If you're going to do it with bonus, please do what is asked in tutorial point "2. Virtual machine installation: --> subpoint 7.", but put exactly 30.8 GB instead of 30GB.
 
-2 - In the subpoint "15. Select Guied - use entire disk and set up encrypted LVM. If you want to do the bonus select Manual and then click here" of the point "3. Debian Installation", go directlly to "8.1. Manual partition".
+2 - In the tutorial point "3. Debian Installation --> subpoint 15.", go directlly to the "8.1. Manual partition" point.
 
-3 - In the subpoint "6. As the subject indicates, the size of the partition must be 500 megabytes.", put exactly 525.05 instead of 500mb. 
+3 - In the tutorial "8.1. Manual partition" point --> subpoint 6.", put exactly 525.05 instead of 500mb. 
 
-4 - Follow the tutorial and do it until 8.12 (included). Then jump to 8.19 (and do it).
+4 - Continue following the tutorial and do it until 8.12 (included). Then jump to 8.19 (and do it).
 
 5 - In the next points where you need to define the dimension of the partitions (similar to what I refered in point 3 above), you should convert Gibibyte to Gigabyte (using https://www.dataunitconverter.com/gibibyte-to-gigabyte/4) to include the right value on the field. For example, in subpoint "37. Size, as indicated in the subject, will be 10g." of point "8.1. Manual partition", 10 g (Gibibyte or GiB) is equivalent to 10.73741824 GB (Gigabyte). In subpoint 38, 39, 40, 41, 42, 43, we have to do the same, to guarantee that the partitions have the dimension that is asked in the bonus part: ![image](https://github.com/jpjpcs/42_born2beroot/assets/127231744/dd141d07-f8a4-4199-b77a-58a2d05e7b95).
 
-5 -  After finishing the point "8.1. Manual partition", make the point "4.1 Installing sudo & configuration of users and groups" and point "4.2 Installing & configuring SSH" of the point "4. Virtual machine setup gear".
-which sudo
+5 -  After finishing the point "8.1. Manual partition", make the point "4.1 Installing sudo & configuration of users and groups" and point "4.2 Installing & configuring SSH" of the "4. Virtual machine setup gear" point.
+
 6 - After doing the 4.2 point, make the point "4.6 Connecting via SSH". Why? Because you will have to put a lot of commands, and its easier to copy/paste it to the linux terminal of your pc (which is not allowed in the environment of the Debian Gnu/Linux -  the "terminal" of the VM).
 
 7 - In "4.6 Connecting via SSH", in the subpoint "2. Once there we will click on Network, click on Advanced so it shows more options, then we click on Port fowarding.", choose Bridge Adapter (Attached to:) and eno2 (Name:) in the Network. This will solve a lot of issues in the next points of the tutorial, once you don't have to configure any door anymore. It will be done automatically for you.
@@ -48,7 +48,23 @@ dns-nameservers 10.11.254.254
 `sudo reboot`
 `ss -tulnp`#check if the door 68 is already closed. If it is, it doesn't appear.
 
-12. After this, go to the 7. point ("7. Signature") to deliver the project. 
+12. After this, make a fast "Last Checks" (bellow) and then go to the 7. point of Gemartin tutorial ("7. Signature") to deliver the project.
+
+### Last Checks
+Before submitting the project, we performed some checks to ensure everything was set up correctly. These checks included verifying the Linux release, checking the partitions, verifying sudo installation, checking the hostname, checking password policies, checking UFW and SSH status, checking sudo logs, and verifying user group memberships:
+
+lsb_release -a || cat /etc/os-release
+lsblk
+dpkg -l | grep sudo
+hostnamectl
+sudo chage -l username
+sudo ufw status numbered
+sudo systemctl status ssh
+cd /var/log/sudo/ && cat sudo_config
+getent group sudo
+getent group user42
+cd /home/jode-jes && bash monitoring.sh (the home/jode-jes is the path where I had put the file monitoring.sh. You can use the path that you wish. For example, if you use /usr/local/bin as the path, then the command should be cd /usr/local/bin && bash monitoring.sh).
+
 13. After that we will turn off the VM, take a snapshot to keep the instance and generate a signature.txt get with the shasum of vdi.
 `sudo shutdown now`#turn-off the machine
 `sha1sum born2beroot.vdi`#sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image.
@@ -58,7 +74,7 @@ dns-nameservers 10.11.254.254
 
 In my project I used Debian 10.13. If you want to use the same version, follow the download link: https://cdimage.debian.org/cdimage/archive/10.13.0/amd64/iso-cd/debian-10.13.0-amd64-netinst.iso
 
-# Commands for Evaluationsudo
+# Commands for Evaluation
 
 | No. | Command                               | Description                                                              |
 |-----|---------------------------------------|--------------------------------------------------------------------------|
