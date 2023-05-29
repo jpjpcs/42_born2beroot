@@ -45,10 +45,10 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `sudo service ufw status`             | Checks the status of the UFW (firewall) service                           |
 | 3.  | Check that the SSH service is in use
 |     | `sudo service ssh status` or `sudo systemctl status ssh`   | Checks the status of the SSH service                  |
-|     | `dpkg -l | grep ssh`                  | Shows that ssh is installed                                                |
+|     | `dpkg -l (pipe) grep ssh`                  | Shows that ssh is installed                                           |
 | 4.  | Check that you are using the Debian 
 |     | `uname -v` or `head -n 2 /etc/os-release` | Displays information about the operating system version                |
-|     |`lsb_release -a || cat /etc/os-release`  | Check linux release                    |
+|     | `lsb_release -a (pipe) cat /etc/os-release`  | Check linux release                                                 |
 | 5.  | Check that your user is within the "sudo" and "user42" groups.
 |     | `groups username`                     | Checks the groups to which a user belongs                                 |
 |     | `getent group sudo`                   | Checks that the user is within the "sudo" group                           |
