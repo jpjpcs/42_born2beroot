@@ -50,7 +50,7 @@ dns-nameservers 10.11.254.254
 
 12. After this, make a fast "Last Checks" (bellow) and then go to the 7. point of Gemartin tutorial ("7. Signature") to deliver the project.
 
-### Last Checks
+####### Last Checks
 Before submitting the project, we performed some checks to ensure everything was set up correctly. These checks included verifying the Linux release, checking the partitions, verifying sudo installation, checking the hostname, checking password policies, checking UFW and SSH status, checking sudo logs, and verifying user group memberships:
 
 lsb_release -a || cat /etc/os-release
@@ -65,7 +65,7 @@ getent group sudo
 getent group user42
 cd /home/jode-jes && bash monitoring.sh (the home/jode-jes is the path where I had put the file monitoring.sh. You can use the path that you wish. For example, if you use /usr/local/bin as the path, then the command should be cd /usr/local/bin && bash monitoring.sh).
 
-13. After that we will turn off the VM, take a snapshot to keep the instance and generate a signature.txt get with the shasum of vdi.
+13. Signature: After that we will turn off the VM, take a snapshot to keep the instance and generate a signature.txt get with the shasum of vdi.
 `sudo shutdown now`#turn-off the machine
 `sha1sum born2beroot.vdi`#sha1shum guarantees that the file born2beroot.vdi was not changed. vdi stands for virtual disk image.
 `cat > signature.txt`#put the number that is given in the sal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project.
