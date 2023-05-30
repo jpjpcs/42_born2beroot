@@ -122,7 +122,7 @@ In my project I used Debian 10.13. If you want to use the same version, follow t
 |     | `dpkg -l (pipe) grep sudo`            | Shows sudo's installed.                                                   |
 |     | `sudo -V`                             | Verify that sudo's installed and shows its version                        |
 | 13. | Add the new user to the sudo group.
-|     | `sudo adduser name_user`              | Adds a user to the "sudo" group (superuser privileges)                    |
+|     | `sudo adduser name_user sudo`         | Adds a user to the "sudo" group (superuser privileges)                    |
 |     | `getent group sudo`                   | Checks that the user is within "sudo" group                               |
 | 14. | Show the application of the rules imposed for sudo by the subject.
 |     | `nano /etc/sudoers.d/sudo_config`     | Edits the sudo configuration settings/rules                               |
