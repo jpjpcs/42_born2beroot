@@ -33,19 +33,22 @@ This guide has some points that we should pay extra attention. You should read t
 11. After finalizing the 8.3 point, we need to close the 68 door. To do that, we must:
 use the sudo ss -tunlp command to find that the port 68 is open, which is referring to DHCP. To close this door, we need to change the machine IP address from dynamic to static. To solve this, we will make the following changes:
 
-1. sudo ss -tunlp #check the open doors
-2. ip a #your current address
-3. sudo nano /etc/network/interfaces
-4. change line `allow-hotplug enp0s3` to `auto enp0s3`
-5. change line `iface enp0s3 inet dhcp` to `iface enp0s3 inet static`
-6. Then add the following lines:
+```markdown sudo ss -tunlp #check the open doors
+ip a #your current address
+sudo nano /etc/network/interfaces
+change line allow-hotplug enp0s3 to
+auto enp0s3
+change line iface enp0s3 inet dhcp to
+iface enp0s3 inet static
+Then add the follow lines
 address your_current_ip
 netmask 255.255.0.0
 gateway 10.11.254.254
 dns-nameservers 10.11.254.254
-7. sudo systemctl restart networking
-8. sudo systemctl status networking
-9. sudo reboot
+sudo systemctl restart networking
+sudo systemctl status networking
+sudo reboot```
+
 
 
 12. After this, make a fast "Last Checks" (bellow) and then go to the 7. point of Gemartin tutorial ("7. Signature") to deliver the project.
