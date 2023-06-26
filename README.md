@@ -74,6 +74,8 @@ Before submitting the project, we performed some checks to ensure everything was
 ###### Put the number that is given in the shal1sum to the signature.txt file, and put that file (and ONLY that file) in the github root to deliver the project:
 `cat > signature.txt` to create the file or `nano` and then give the name to the file of signature.txt`
 
+14. Last note: if you make the bonus, erase the "s" from the https when you are trying to open the website. Otherwise it won´t work/open. 
+    
 # Debian Version
 
 In my project I used Debian 10.13. If you want to use the same version, follow the download link: https://www.debian.org/distrib/netinst
